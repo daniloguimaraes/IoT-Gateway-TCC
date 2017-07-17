@@ -93,6 +93,10 @@
 \def\subtitulo#1{\def\@subtitulo{#1}}           \subtitulo{}
 \def\autor#1{\def\@autor{#1}}                   \autor{}
 \def\autorR#1{\def\@autorR{#1}}                 \autorR{}
+\def\segundoAutor#1{\def\@segundoAutor{#1}}     \segundoAutor{}
+\def\segundoAutorR#1{\def\@segundoAutorR{#1}}   \segundoAutorR{}
+\def\terceiroAutor#1{\def\@terceiroAutor{#1}}   \terceiroAutor{}
+\def\terceiroAutorR#1{\def\@terceiroAutorR{#1}} \terceiroAutorR{}
 \def\orientador#1{\def\@orientador{#1}}         \orientador{}
 \def\orientadora#1{\def\@orientadora{#1}}       \orientadora{}
 \def\orientadorR#1{\def\@orientadorR{#1}}       \orientadorR{}
@@ -443,6 +447,8 @@
    \textoC{1}{\Large \scshape \@departamento\relax \normalsize \upshape} }%
   \vspace*{\stretch{.1}}%
   \textoC{1}{\Large \scshape \@autor \normalsize \upshape}%
+  \textoC{1}{\Large \scshape \@segundoAutor \normalsize \upshape}%
+  \textoC{1}{\Large \scshape \@terceiroAutor \normalsize \upshape}%
   \vspace*{\stretch{8}}%
   \textoC{1.8}{\huge \textbf{\@titulo\relax} \normalsize}%
   \ifthenelse{\equal{\@subtitulo}{}}{}{%

@@ -29,6 +29,7 @@
 \contentsline {section}{\numberline {3.5}Teoremas, Corol\'arios e Demonstra\c c\~oes}{25}{section.44}
 \contentsline {section}{\numberline {3.6}Cita\c c\~oes Longas}{26}{section.46}
 \contentsline {section}{\numberline {3.7}Refer\^encias Bibliogr\'aficas}{26}{section.47}
-\contentsline {chapter}{\numberline {A}Exemplo de um Ap\^endice}{29}{appendix.48}
-\contentsline {chapter}{\numberline {B}Exemplo de Outro Ap\^endice}{33}{appendix.49}
+\contentsline {chapter}{Refer\^encias Bibliogr\'aficas}{29}{section.47}
+\contentsline {chapter}{\numberline {A}Exemplo de um Ap\^endice}{34}{appendix.48}
+\contentsline {chapter}{\numberline {B}Exemplo de Outro Ap\^endice}{38}{appendix.49}
 \contentsfinish 
