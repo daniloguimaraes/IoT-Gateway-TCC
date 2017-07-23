@@ -190,10 +190,6 @@
 \input{./tex/cap_II}
 \input{./tex/cap_III}
 
-% ----------------------------------------------------------
-% Introdução
-% ----------------------------------------------------------
-
 
 % ---
 % Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
@@ -204,16 +200,8 @@
 % ---
 % Conclusão
 % ---
-\section*{Considerações finais}
-\addcontentsline{toc}{section}{Considerações finais}
+\input{./tex/conclusao}
 
-\lipsum[1]
-
-\begin{citacao}
-\lipsum[2]
-\end{citacao}
-
-\lipsum[3]
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -269,16 +257,9 @@
 % ---
 % Inicia os apêndices
 % ---
-\begin{apendicesenv}
+\input{./pos/apendice}
 
-% ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
-% ----------------------------------------------------------
-\lipsum[55-57]
 
-\end{apendicesenv}
-% ---
 
 % ----------------------------------------------------------
 % Anexos
@@ -288,15 +269,6 @@ ac pretium ante justo a nulla curabitur tristique arcu eu metus}
 % Inicia os anexos
 % ---
 %\anexos
-\begin{anexosenv}
-
-% ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
-parturient montes nascetur ridiculus mus}
-% ---
-
-\lipsum[31]
-
-\end{anexosenv}
+\input{./anexos/anexos}
 
 \end{document}
