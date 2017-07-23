@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: artigo.aux
 I couldn't open database file abntex2-modelo-references.bib
----line 69 of file artigo.aux
+---line 39 of file artigo.aux
  : \bibdata{abntex2-options,abntex2-modelo-references
  :                                                   }
 I'm skipping whatever remains of this command
@@ -17,12 +17,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: abntex2-options.bib
-Warning--I didn't find a database entry for "abntex2classe"
-Warning--I didn't find a database entry for "abntex2-wiki-como-customizar"
-Warning--I didn't find a database entry for "abntex2cite"
-Warning--I didn't find a database entry for "abntex2cite-alf"
-Warning--I didn't find a database entry for "memoir"
-Warning--I didn't find a database entry for "abntex2modelo"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=20001) to 20 items from 10.
@@ -34,7 +28,7 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 +---------------------------------------------------------+
 You've used 1 entry,
             6711 wiz_defined-function locations,
-            1203 strings with 9427 characters,
+            1197 strings with 9341 characters,
 and the built_in function-call counts, 891 in all, are:
 = -- 192
 > -- 0
