@@ -5,4 +5,9 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Konsek 2015]{DZone}
+\abntrefinfo{Konsek}{KONSEK}{2015}
+{KONSEK, H. \emph{{The Architecture of IoT Gateways}}. [S.l.]: DZone, 2015.
+  Https://dzone.com/articles/iot-gateways-and-architecture.}
+
 \end{thebibliography}

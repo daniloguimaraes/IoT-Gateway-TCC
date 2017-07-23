@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.6.20)  23 JUL 2017 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2017.6.20)  23 JUL 2017 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1222,9 +1222,6 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 
 
 bibitemlist
-
-LaTeX Warning: Empty `thebibliography' environment on input line 8.
-
 ) [4] [5]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
@@ -1232,17 +1229,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
 Package rerunfilecheck Info: File `artigo.brf' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 1EC02375A13AFF885B855CB2849C606A;46.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 302.
  ) 
 Here is how much of TeX's memory you used:
- 12876 strings out of 493105
- 190838 string characters out of 6137072
- 445561 words of memory out of 5000000
- 16045 multiletter control sequences out of 15000+600000
- 63630 words of font info for 85 fonts, out of 8000000 for 9000
+ 12889 strings out of 493105
+ 190978 string characters out of 6137072
+ 445712 words of memory out of 5000000
+ 16055 multiletter control sequences out of 15000+600000
+ 63760 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,11n,35p,439b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,11n,35p,447b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/s
 hare/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public
@@ -1251,10 +1252,10 @@ mf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/font
 s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on artigo.pdf (5 pages, 193064 bytes).
+Output written on artigo.pdf (5 pages, 195863 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
+ 136 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
  22617 words of extra memory for PDF output out of 24883 (max. 10000000)
 
