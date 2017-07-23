@@ -15,19 +15,22 @@
 \BOOKMARK [0][-]{Doc-Start}{Lista de Algoritmos}{}% 15
 \BOOKMARK [0][-]{section*.1}{Lista de C\363digos de Programas}{}% 16
 \BOOKMARK [0][-]{chapter.2}{1 Introdu\347\343o}{}% 17
-\BOOKMARK [0][-]{chapter.3}{2 Descri\347\343o da classe inf-ufg}{}% 18
-\BOOKMARK [1][-]{section.4}{2.1 Op\347\365es da classe}{chapter.3}% 19
-\BOOKMARK [1][-]{section.5}{2.2 Par\342metros da classe}{chapter.3}% 20
-\BOOKMARK [1][-]{section.7}{2.3 Elementos Pr\351\205Textuais}{chapter.3}% 21
-\BOOKMARK [0][-]{chapter.20}{3 Elementos do texto}{}% 22
-\BOOKMARK [1][-]{section.21}{3.1 Figuras}{chapter.20}% 23
-\BOOKMARK [2][-]{subsection.25}{3.1.1 Subfiguras}{section.21}% 24
-\BOOKMARK [1][-]{section.29}{3.2 Tabelas}{chapter.20}% 25
-\BOOKMARK [1][-]{section.31}{3.3 Algoritmos}{chapter.20}% 26
-\BOOKMARK [1][-]{section.42}{3.4 C\363digos de Programa}{chapter.20}% 27
-\BOOKMARK [1][-]{section.44}{3.5 Teoremas, Corol\341rios e Demonstra\347\365es}{chapter.20}% 28
-\BOOKMARK [1][-]{section.46}{3.6 Cita\347\365es Longas}{chapter.20}% 29
-\BOOKMARK [1][-]{section.47}{3.7 Refer\352ncias Bibliogr\341ficas}{chapter.20}% 30
-\BOOKMARK [0][-]{section.47}{Refer\352ncias Bibliogr\341ficas}{}% 31
-\BOOKMARK [0][-]{appendix.48}{A Exemplo de um Ap\352ndice}{}% 32
-\BOOKMARK [0][-]{appendix.49}{B Exemplo de Outro Ap\352ndice}{}% 33
+\BOOKMARK [1][-]{section.3}{1.1 Objetivos}{chapter.2}% 18
+\BOOKMARK [1][-]{section.4}{1.2 Motiva\347\343o}{chapter.2}% 19
+\BOOKMARK [1][-]{section.5}{1.3 Organiza\347\343o do trabalho}{chapter.2}% 20
+\BOOKMARK [0][-]{chapter.6}{2 Descri\347\343o da classe inf-ufg}{}% 21
+\BOOKMARK [1][-]{section.7}{2.1 Op\347\365es da classe}{chapter.6}% 22
+\BOOKMARK [1][-]{section.8}{2.2 Par\342metros da classe}{chapter.6}% 23
+\BOOKMARK [1][-]{section.10}{2.3 Elementos Pr\351\205Textuais}{chapter.6}% 24
+\BOOKMARK [0][-]{chapter.23}{3 Elementos do texto}{}% 25
+\BOOKMARK [1][-]{section.24}{3.1 Figuras}{chapter.23}% 26
+\BOOKMARK [2][-]{subsection.28}{3.1.1 Subfiguras}{section.24}% 27
+\BOOKMARK [1][-]{section.32}{3.2 Tabelas}{chapter.23}% 28
+\BOOKMARK [1][-]{section.34}{3.3 Algoritmos}{chapter.23}% 29
+\BOOKMARK [1][-]{section.45}{3.4 C\363digos de Programa}{chapter.23}% 30
+\BOOKMARK [1][-]{section.47}{3.5 Teoremas, Corol\341rios e Demonstra\347\365es}{chapter.23}% 31
+\BOOKMARK [1][-]{section.49}{3.6 Cita\347\365es Longas}{chapter.23}% 32
+\BOOKMARK [1][-]{section.50}{3.7 Refer\352ncias Bibliogr\341ficas}{chapter.23}% 33
+\BOOKMARK [0][-]{section.50}{Refer\352ncias Bibliogr\341ficas}{}% 34
+\BOOKMARK [0][-]{appendix.51}{A Exemplo de um Ap\352ndice}{}% 35
+\BOOKMARK [0][-]{appendix.52}{B Exemplo de Outro Ap\352ndice}{}% 36

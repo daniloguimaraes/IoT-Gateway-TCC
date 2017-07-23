@@ -436,7 +436,7 @@
   pdfsubject={\@concentracao}
  }
 
- \modelo%
+% \modelo%
  \singlespacing%
  \begin{titlepage}%
   \textoC{1}{\Large \scshape \@universidade \normalsize \upshape}%
@@ -500,17 +500,23 @@
     {-- \@subtitulo} }%
   \vspace*{15pt}%
   \par%
-  \noindent\textbf{Autor(a):} \@autor%
+  \noindent\textbf{Autores:} \@autor, \@segundoAutor, \@terceiroAutor
   \vspace*{40pt}%
   \par%
   \@cidade, \@dia\ de \@mesP\ de \@ano.
-  \vspace*{60pt}%
+  \vspace*{40pt}%
   \par
   \textoD{\rule{.75\textwidth}{0.5pt}\\ \small \@autor\ -- Autor}
-  \vspace*{30pt}%
+  \vspace*{15pt}%
+    \par
+  \textoD{\rule{.75\textwidth}{0.5pt}\\ \small \@segundoAutor\ -- Autor}
+  \vspace*{15pt}%
+    \par
+  \textoD{\rule{.75\textwidth}{0.5pt}\\ \small \@terceiroAutor\ -- Autor}
+  \vspace*{15pt}%
   \par
   \textoD{\rule{.75\textwidth}{0.5pt}\\ \small \@orientador\ -- Orientador}
-  \vspace*{30pt}%
+  \vspace*{15pt}%
   \par
   \ifthenelse{\equal{\@coorientador}{}}
    {\ifthenelse{\equal{\@coorientadora}{}}
@@ -533,6 +539,8 @@
  \fi
  \singlespacing%
  \textoC{1}{\Large \scshape \@autor \normalsize \upshape}%
+  \textoC{1}{\Large \scshape \@segundoAutor \normalsize \upshape}%
+   \textoC{1}{\Large \scshape \@terceiroAutor \normalsize \upshape}%
  \vspace*{\stretch{6}}%
  \textoC{1.7}{\huge \textbf{\@titulo\relax} \normalsize}%
  \ifthenelse{\equal{\@subtitulo}{}}{}{%
@@ -550,7 +558,7 @@
     obten\c c\~ao do t\'itulo de Mestre em \@programa.}{%
   \ifthenelse{\boolean{mngr}}%
    {Monografia apresentada ao Programa de P\'os--Gradua\c c\~ao %
-    do \@unidade\ da \@universidade, como requisito parcial para\ %
+    do \@unidade\ do \@universidade, como requisito parcial para\ %
     obten\c c\~ao do Certificado de Especializa\c{c}\~ao em \@programa.}%
    {Trabalho de Conclus\~ao apresentado \`a Coordena\c c\~ao do Curso de \@programa\ do\ %
     \@unidade\ da\ \@universidade, como requisito parcial para obten\c c\~ao do\ %
@@ -684,7 +692,7 @@
  \@makeschapterhead{Resumo}
  \begin{minipage}{13.5cm}
   \singlespacing%
-  \@autorR.
+  \@autorR; \@segundoAutorR; \@terceiroAutorR.
   \textbf{\@titulo}.
   \@cidade, \@ano.
   \pageref{LastPage}p.
@@ -721,7 +729,7 @@
   \@makeschapterhead{Abstract}
   \begin{minipage}{13.5cm}
    \singlespacing%
-   \@autorR.
+   \@autorR; \@segundoAutorR; \@terceiroAutorR.
    \textbf{#1}.
    \@cidade, \@ano.
    \pageref{LastPage}p.
