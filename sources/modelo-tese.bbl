@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{ComputerWorld}
+{\sffamily\scshape Andriolli, A.}
+\newblock {\bfseries {Gateways serão fundamentais para segurança em projetos de
+  IoT}}.
+\newblock
+  http://computerworld.com.br/gateways-serao-fundamentais-para-seguranca-em-projetos-de-iot.
+
 \bibitem{ChenJiaLi}
 {\sffamily\scshape Chen, H.; Jia, X.; Li, H.}
 \newblock {\bfseries {A brief introduction to IoT gateway}}.
@@ -16,7 +23,12 @@
 \newblock {\bfseries {Design and Implementation of a Smart IoT Gateway}}.
 \newblock In: {\itshape Procedings of IEEE International Conference on Green
   Computing and Communications and IEEE Internet of Things and IEEE Cyber
-  Physical and Social Computing}, 2013.
+  Physical and Social Computing}, p. 720--723. IEEE, 2013.
+
+\bibitem{DZone}
+{\sffamily\scshape Konsek, H.}
+\newblock {\bfseries {The Architecture of IoT Gateways}}.
+\newblock https://dzone.com/articles/iot-gateways-and-architecture, 2015.
 
 \bibitem{WhatIsIotGateway}
 {\sffamily\scshape Rouse, M.}

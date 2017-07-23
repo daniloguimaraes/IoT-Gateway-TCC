@@ -3,6 +3,8 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: modelo-tese.aux
 The style file: inf-ufg.bst
 Database file #1: ./bib/modelo-tese.bib
+A bad cross reference---entry "GuoqiangEtAl"
+refers to entry "conf/greencom/2013", which doesn't exist
 Warning--I didn't find a database entry for "Mar2004"
 Warning--I didn't find a database entry for "abnt-classe-doc"
 Warning--I didn't find a database entry for "NBR10520:2001"
@@ -17,45 +19,45 @@ Warning--I didn't find a database entry for "KopDal1995"
 Warning--I didn't find a database entry for "Lam1996"
 Warning--I didn't find a database entry for "GooMitSam1994"
 Warning--I didn't find a database entry for "Dra1994"
-You've used 5 entries,
+You've used 7 entries,
             2158 wiz_defined-function locations,
-            568 strings with 5079 characters,
-and the built_in function-call counts, 1482 in all, are:
-= -- 108
-> -- 89
-< -- 0
-+ -- 35
-- -- 30
-* -- 104
-:= -- 250
-add.period$ -- 13
-call.type$ -- 5
-change.case$ -- 30
+            582 strings with 5418 characters,
+and the built_in function-call counts, 2089 in all, are:
+= -- 169
+> -- 103
+< -- 1
++ -- 41
+- -- 34
+* -- 134
+:= -- 337
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 38
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 66
-empty$ -- 139
-format.name$ -- 30
-if$ -- 301
+cite$ -- 7
+duplicate$ -- 93
+empty$ -- 200
+format.name$ -- 34
+if$ -- 444
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 7
 missing$ -- 3
-newline$ -- 26
-num.names$ -- 10
-pop$ -- 47
+newline$ -- 36
+num.names$ -- 14
+pop$ -- 59
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 31
 quote$ -- 0
-skip$ -- 33
+skip$ -- 58
 stack$ -- 0
-substring$ -- 25
-swap$ -- 18
-text.length$ -- 0
+substring$ -- 63
+swap$ -- 33
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 28
 warning$ -- 0
-while$ -- 10
-width$ -- 6
-write$ -- 48
-(There were 14 warnings)
+while$ -- 16
+width$ -- 8
+write$ -- 69
+(There was 1 error message)
