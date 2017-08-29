@@ -1,4 +1,40 @@
 \section{Não sei o nome ainda, mas é aonde fala sobre nossa implementação}
 \label{sec:iotGateway}
 
--- Escrever sobre nossa implementação
+Gateway para IoT
+\begin{verbatim}
+TypeScript 2.3 com transpile para ES6;
+TSLint 4.x com recomentações gerais padrão (*Nota: TSLint >= 5.x ainda não é suportado pelo tslint-microsoft-contrib;
+Jest para teste unitário e cobertura;
+Definições de tipo para Node.js v6.x (LTS) e Jest;
+Angular 1.6 para o front end da aplicação;
+\end{verbatim}
+
+Scripts disponíveis
+\begin{verbatim}
+npm start - Inicia o servidor do express.js;
+npm clean - remove todos os caches e arquivos tranpilados;
+npm build - Transpile de TypeScript para ES6;
+npm run watch - Inicia um watch que efetua o transpile automatico de coisas alteradas;
+npm lint - Executa um lint dos arquivos e dos testes;
+npm test - Executa os testes;
+npm test:watch - Inicia um watch que executa os testes sempre que algo for modificado;
+\end{verbatim}
+
+MongoDb, pode ser baixado através de imagem docker e executado da seguinte forma:
+\begin{verbatim}
+$ docker pull tutum/mongodb
+$ docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_PASS="iot-gateway" tutum/mongodb
+\end{verbatim}
+
+Executando a aplicação
+Execute o comando npm run watch em um console e deixe aberto
+Execute o comando npm start em outro console
+Abra o navegador na tela padrão conforme a porta configurada (ela será escrita no log, por padrão é 3000).
+Carregando com dados básicos:
+
+Os dados básicos para execução da app, são criados através de uma URL exposta no endpoint de api no endereço: http://localhost:3000/api/basicos
+
+Ao executar este endereço, será criado um cadastro wildcard, com ID do MQTT Client '*', de forma que qualquer dispositivo enviando os dados, terá seu cadastro de dispositivo atendido para este.
+
+O evento padrão é o envio de SMS para o número padrão e será enviado sempre que a aplicação receber um valor 'true'.
