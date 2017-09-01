@@ -5,25 +5,13 @@
 Com os recentes avanços das tecnologias, especificamente nas últimas décadas e devido a democratização da Internet, nossa sociedade tem caminhado para um cenário cada vez mais conectado. Se antes apenas super-computadores e máquinas robustas eram conectadas à rede, a tendência nos próximos anos é que dispositivos cada vez menores também tenham seu espaço na Internet.
 A essa tendência chamamos \textit{Internet of Things}, ou simplesmente IoT. É uma nova visão que descreve objetos fazendo parte da rede, onde cada um deles é unicamente identificado, acessível através da rede, com posição e estado conhecido, captando informações sensoriais ou agindo sobre o ambiente. Serviços são construídos com base nesses objetos.
 
-Estima-se que até 2050, seja investido cerca de U\$ 19 bi em IoT.
+Estima-se que até 2050, seja investido cerca de US\$ 19 bi em IoT.
 
 A principal motivação da realização desse trabalho foi adentrar no assunto de IoT para entender melhor como as tecnologias envolvidas funcionam.
 -- Escrever mais a motivação
 
 O objetivo desse trabalho é construir um IoT Gateway open-source, funcional e utilizável em projetos de pequeno e médio porte.
 
-As decisões de tecnologia por trás da implementação do projeto, foram feitas sempre com foco na portabilidade e execução em dispositivos com baixo recurso de memória e processamento, portanto selecionamos o seguinte set de tecnologias:
-\begin{itemize}
-\item Node.js
-\item Typescript
-\item MongoDB
-\item AngularJS
-\end{itemize}
-Onde Node.js, Typescript e MongoDB são aplicados no backend e servidor de eventos, e AngularJS no front end para configuração da aplicação.
-O Node.js foi escolhido por conta de seu baixo consumo de memória e processamento, além do seu Non-Blocking IO, garantindo que possamos servir mais clientes com menos recursos. O Typescript veio para trazer tipos e tornar mais fácil o desenvolvimento e manutenção da aplicação Node.js.
-O MongoDB despontou entre as outras opções de banco de dados por trazer um serviço leve, de fácil execução em ambientes Linux e armazenamento de grande quantidade de informações, algo que em um futuro onde pretendemos armazenar durante dias os eventos publicados, pode ser de grande valia.
-O AngularJS foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com este tipo de tecnologia.
-
-Não faz parte do objetivos desse trabalho competir, de quaisquer aspectos possíveis, com soluções de IoT Gateway existentes no mercado.
+Não faz parte do objetivos desse trabalho competir, em quaisquer aspectos possíveis, com soluções de IoT Gateway existentes no mercado.
 -- Escrever mais sobre os objetivos
 

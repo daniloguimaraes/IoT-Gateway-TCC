@@ -1,5 +1,20 @@
-\section{Não sei o nome ainda, mas é aonde fala sobre nossa implementação}
+\section{Solução desenvolvida}
 \label{sec:iotGateway}
+
+Além desse artigo, foi desenvolvida também uma solução de software para atingir os objetivos aqui propostos. O projeto está disponibilizado no Github \cite{IoTGatewayGithub} e essa seção se propõe a detalhar as decisões arquiteturais.
+
+As decisões de tecnologia por trás da implementação do projeto foram feitas sempre com foco na portabilidade e execução em dispositivos com baixo recurso de memória e processamento. Portanto, selecionamos o seguinte conjunto de tecnologias:
+
+\begin{itemize}
+	\item Node.js \cite{NodeJS}
+	\item Typescript \cite{Typescript}
+	\item MongoDB \cite{MongoDB}
+	\item AngularJS \cite{AngularJS}
+\end{itemize}
+Onde Node.js, Typescript e MongoDB são aplicados no backend e servidor de eventos, e AngularJS no front end para configuração da aplicação.
+O Node.js foi escolhido por conta de seu baixo consumo de memória e processamento, além do seu Non-Blocking IO, garantindo que possamos servir mais clientes com menos recursos. O Typescript veio para trazer tipos e tornar mais fácil o desenvolvimento e manutenção da aplicação Node.js.
+O MongoDB despontou entre as outras opções de banco de dados por trazer um serviço leve, de fácil execução em ambientes Linux e armazenamento de grande quantidade de informações, algo que em um futuro onde pretendemos armazenar durante dias os eventos publicados, pode ser de grande valia.
+O AngularJS foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com este tipo de tecnologia.
 
 Gateway para IoT
 \begin{verbatim}
@@ -33,8 +48,8 @@ Execute o comando npm start em outro console
 Abra o navegador na tela padrão conforme a porta configurada (ela será escrita no log, por padrão é 3000).
 Carregando com dados básicos:
 
-Os dados básicos para execução da app, são criados através de uma URL exposta no endpoint de api no endereço: http://localhost:3000/api/basicos
+Os dados básicos para execução da app, são criados através de uma URL exposta no endpoint de api no endereço: \verb|http://localhost:3000/api/basicos|
 
 Ao executar este endereço, será criado um cadastro wildcard, com ID do MQTT Client '*', de forma que qualquer dispositivo enviando os dados, terá seu cadastro de dispositivo atendido para este.
 
-O evento padrão é o envio de SMS para o número padrão e será enviado sempre que a aplicação receber um valor 'true'.
+O evento padrão é o envio de SMS para o número padrão e será enviado sempre que a aplicação receber um valor \verb|true|	.
