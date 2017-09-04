@@ -4,21 +4,27 @@
 Além desse artigo, foi desenvolvida também uma solução de software para atingir os objetivos aqui propostos. O projeto está disponibilizado no Github \cite{IoTGatewayGithub} e essa seção se propõe a detalhar as decisões arquiteturais.
 
 As decisões de tecnologia por trás da implementação do projeto foram feitas sempre com foco na portabilidade e execução em dispositivos com baixo recurso de memória e processamento. Portanto, selecionamos o seguinte conjunto de tecnologias:
-
-Gateway para IoT
 \begin{itemize}
 	\item Node.js v6.x \cite{NodeJS}
 	\item TypeScript 2.3 com transpile para ES6 \cite{Typescript}
-	\item TSLint 4.x com recomentações gerais padrão \cite{TSLint}
+	\item TSLint 4.x com recomendações gerais padrão \cite{TSLint}
 	\item Jest para teste unitário e cobertura \cite{Jest}
 	\item Angular 1.6 para o front end da aplicação \cite{AngularJS}
 	\item MongoDB \cite{MongoDB}
 \end{itemize}
 
-Onde Node.js, Typescript e MongoDB são aplicados no backend e servidor de eventos, e AngularJS no front end para configuração da aplicação.
-O Node.js foi escolhido por conta de seu baixo consumo de memória e processamento, além do seu Non-Blocking IO, garantindo que possamos servir mais clientes com menos recursos. O Typescript veio para trazer tipos e tornar mais fácil o desenvolvimento e manutenção da aplicação Node.js.
-O MongoDB despontou entre as outras opções de banco de dados por trazer um serviço leve, de fácil execução em ambientes Linux e armazenamento de grande quantidade de informações, algo que em um futuro onde pretendemos armazenar durante dias os eventos publicados, pode ser de grande valia.
-O AngularJS foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com este tipo de tecnologia.
+O node foi escolhido por conta de seu baixo consumo de memória e processamento, além do seu Non-Blocking IO, garantindo que possamos servir mais clientes com menos recursos, objetivo essencial para aplicações que podem ser executadas em um Raspberry Pi por exemplo. A intenção era ter uma estrutura tipada, de forma que a manutenção do código fosse facilitada e as regras de negócio pudessem estar ligadas a um contrato de objeto. Já o angular 1 foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com este tipo de tecnologia. Decisões como a de não inserir nenhum processo de build, foram tomadas para que fosse possível servir o angular facilmente como um serviço estático do express.js
+
+Modelo de Dados
+
+O modelo de dados foi feito com a intenção de tornar a configuração de triggers para os eventos mais fácil e plugável. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{./img/modelo-de-dados}
+	\caption{Modelo de dados}
+	\label{fig:modeloDeDados}
+\end{figure}
 
 Scripts disponíveis
 \begin{verbatim}
