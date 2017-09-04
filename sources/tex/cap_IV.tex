@@ -5,25 +5,20 @@ Além desse artigo, foi desenvolvida também uma solução de software para atin
 
 As decisões de tecnologia por trás da implementação do projeto foram feitas sempre com foco na portabilidade e execução em dispositivos com baixo recurso de memória e processamento. Portanto, selecionamos o seguinte conjunto de tecnologias:
 
+Gateway para IoT
 \begin{itemize}
-	\item Node.js \cite{NodeJS}
-	\item Typescript \cite{Typescript}
+	\item Node.js v6.x \cite{NodeJS}
+	\item TypeScript 2.3 com transpile para ES6 \cite{Typescript}
+	\item TSLint 4.x com recomentações gerais padrão \cite{TSLint}
+	\item Jest para teste unitário e cobertura \cite{Jest}
+	\item Angular 1.6 para o front end da aplicação \cite{AngularJS}
 	\item MongoDB \cite{MongoDB}
-	\item AngularJS \cite{AngularJS}
 \end{itemize}
+
 Onde Node.js, Typescript e MongoDB são aplicados no backend e servidor de eventos, e AngularJS no front end para configuração da aplicação.
 O Node.js foi escolhido por conta de seu baixo consumo de memória e processamento, além do seu Non-Blocking IO, garantindo que possamos servir mais clientes com menos recursos. O Typescript veio para trazer tipos e tornar mais fácil o desenvolvimento e manutenção da aplicação Node.js.
 O MongoDB despontou entre as outras opções de banco de dados por trazer um serviço leve, de fácil execução em ambientes Linux e armazenamento de grande quantidade de informações, algo que em um futuro onde pretendemos armazenar durante dias os eventos publicados, pode ser de grande valia.
 O AngularJS foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com este tipo de tecnologia.
-
-Gateway para IoT
-\begin{verbatim}
-TypeScript 2.3 com transpile para ES6;
-TSLint 4.x com recomentações gerais padrão (*Nota: TSLint >= 5.x ainda não é suportado pelo tslint-microsoft-contrib;
-Jest para teste unitário e cobertura;
-Definições de tipo para Node.js v6.x (LTS) e Jest;
-Angular 1.6 para o front end da aplicação;
-\end{verbatim}
 
 Scripts disponíveis
 \begin{verbatim}
