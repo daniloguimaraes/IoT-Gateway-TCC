@@ -11,13 +11,15 @@ As decisões de tecnologia por trás da implementação do projeto foram feitas 
 	\item Jest para teste unitário e cobertura \cite{Jest}
 	\item Angular 1.6 para o front end da aplicação \cite{AngularJS}
 	\item MongoDB \cite{MongoDB}
+	\item MQTT \cite{Mqtt}
+	\item Express como framework web Node.js \cite{ExpressJS}
 \end{itemize}
 
-O node foi escolhido por conta de seu baixo consumo de memória e processamento, além do seu Non-Blocking IO, garantindo que possamos servir mais clientes com menos recursos, objetivo essencial para aplicações que podem ser executadas em um Raspberry Pi por exemplo. A intenção era ter uma estrutura tipada, de forma que a manutenção do código fosse facilitada e as regras de negócio pudessem estar ligadas a um contrato de objeto. Já o angular 1 foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com este tipo de tecnologia. Decisões como a de não inserir nenhum processo de build, foram tomadas para que fosse possível servir o angular facilmente como um serviço estático do express.js
+O Node.js foi escolhido por conta de seu baixo consumo de memória e processamento, além do seu Non-Blocking IO \cite{NodeJSNonBlockingIO}, garantindo que possamos servir mais clientes com menos recursos, objetivo essencial para aplicações que podem ser executadas em um Raspberry Pi \cite{RaspberryPi} por exemplo. A intenção era ter uma estrutura tipada, de forma que a manutenção do código fosse facilitada e as regras de negócio pudessem estar ligadas a um contrato de objeto. Já o angular 1 foi escolhido, por ser uma tecnologia que funciona com Javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com este tipo de tecnologia. Decisões como a de não inserir nenhum processo de build, foram tomadas para que fosse possível servir o angular facilmente como um serviço estático do express.js \cite{ExpressJS}
 
-Modelo de Dados
+\subsection{Modelo de Dados}
 
-O modelo de dados foi feito com a intenção de tornar a configuração de triggers para os eventos mais fácil e plugável. 
+O modelo de dados foi feito com a intenção de facilitar a configuração de \textit{triggers} para os eventos e torná-la plugável. 
 
 \begin{figure}[h!]
 	\begin{center}
@@ -27,7 +29,8 @@ O modelo de dados foi feito com a intenção de tornar a configuração de trigg
 	\end{center}
 \end{figure}
 
-Scripts disponíveis
+\subsection{Scripts disponíveis}
+
 \begin{verbatim}
 npm start - Inicia o servidor do express.js;
 npm clean - remove todos os caches e arquivos tranpilados;
@@ -44,9 +47,11 @@ $ docker pull tutum/mongodb
 $ docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_PASS="iot-gateway" tutum/mongodb
 \end{verbatim}
 
-Executando a aplicação
-Execute o comando npm run watch em um console e deixe aberto
-Execute o comando npm start em outro console
+
+\subsection{Executando a aplicação}
+
+Execute o comando \verb|npm run watch| em um console e deixe aberto
+Execute o comando \verb|npm start| em outro console
 Abra o navegador na tela padrão conforme a porta configurada (ela será escrita no log, por padrão é 3000).
 Carregando com dados básicos:
 
@@ -54,4 +59,4 @@ Os dados básicos para execução da app, são criados através de uma URL expos
 
 Ao executar este endereço, será criado um cadastro wildcard, com ID do MQTT Client '*', de forma que qualquer dispositivo enviando os dados, terá seu cadastro de dispositivo atendido para este.
 
-O evento padrão é o envio de SMS para o número padrão e será enviado sempre que a aplicação receber um valor \verb|true|	.
+O evento padrão é o envio de SMS para o número padrão e será enviado sempre que a aplicação receber um valor booleano igual a \verb|true|.
