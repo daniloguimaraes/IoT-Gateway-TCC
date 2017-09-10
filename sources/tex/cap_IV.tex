@@ -1,7 +1,7 @@
 \section{Solução desenvolvida}
 \label{sec:iotGateway}
 
-Esta seção detalha os objetivos e decisões arquiteturais. Foi desenvolvida uma solução de software de \textit{Smart Gateway IoT} que está disponibilizada no Github, capaz de receber dados através de uma rede utilizando o protocolo MQTT	(\ref{mqtt}) de um dispositivo previamente cadastro e armazenar essas informações. Os dados recebidos são analisados para um embasamento onde irá definir a execução ou não de um fluxo de notificação através de SMS (\ref{sms}) para um número definido.
+Esta seção detalha os objetivos e decisões arquiteturais. Foi desenvolvida uma solução de software de \textit{Smart Gateway IoT} que está disponibilizada no Github, capaz de receber dados através de uma rede utilizando o protocolo MQTT	(\ref{mqtt}) de um dispositivo previamente cadastro e armazenar essas informações. Os dados recebidos são analisados para a estrutura que irá definir a execução ou não de um fluxo de notificação através de SMS (\ref{sms}) para um número definido.
 
 \subsection{Tecnologias Utilizadas} 
 \begin{itemize}
@@ -34,6 +34,8 @@ O modelo de dados foi concebido com a intenção de tornar as etapas do processo
 
 Nesta modelagem, a entidade Dispositivo identifica um aparelho qualquer que se conecte ao gateway para transmitir informações, o aparelho deve definir um ID de conexão que é cadastrado nesta entidade. Com relação direta a entidade Dispositivo, e a entidade Trigger modela um gatilho clássico, composto de condição e ação. Nesta perspectiva, a condição é a entidade Operação que permite avaliar os valores recebidos e identificar se eles são iguais ou estão no intervalo de valor definidos por esta entidade. A entidade Evento por sua vez é a ação, onde é definido o que acontecerá caso a condição seja atendida, por exemplo, o envio de SMS para um destinatário com o determinado texto, ver Figura~\ref{fig:modeloDeDados}.
 
+Além das entidades que servem diretamente a execução do fluxo principal da aplicação, temos 3 entidades de funções secundárias. Configuracao é responsável por armazenar os dados utilizados para configurar a aplicação, como a configuração das credênciais para uso do serviço de SMS. As entidades HistoricoEvento e HistoricoMensagem são reponsáveis por armazenar os dados recebidos e os eventos executados.
+
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=1.085\textwidth]{./img/modelo-de-dados}
@@ -50,7 +52,7 @@ Nesta modelagem, a entidade Dispositivo identifica um aparelho qualquer que se c
 	\end{center}
 \end{figure}
 
-A modelagem desenvolve uma estrutura sequencial que parte da identificação do dispositivo, análise dos gatilhos ligados a este dispositivo, avaliação da operação lógica e liberação para execução do evento, ver Figura~\ref{fig:fluxograma}. Outras entidades não ligadas aos processo principal, visam dar suporte estas operações entregando configurações do sistema e registro de históricos para análise futura. 
+A modelagem desenvolve uma estrutura sequencial que parte da identificação do dispositivo, análise dos gatilhos ligados a este dispositivo, avaliação da operação lógica e liberação para execução do evento, ver Figura~\ref{fig:fluxograma}.  
 
 \subsection{Requisitos funcionais}
 \label{reqFuncionais}

@@ -11,10 +11,78 @@ Na elaboração desse projeto, no que tange a perspectiva da escrita do software
 
 \subsection{Resultados}
 \label{resultados}
-Os resultados foram...
+
+Como resultados deste trabalho, podemos destacar o fomento a discussão de soluções que tornem o desenvolvimento para IoT mais simples, removendo a necessidade de codificação de softwares para receber os eventos para cada projeto, conseguindo resultados em um menor tempo. E como principal ponto o desenvolvimento do software que atenda requisítos de um gateway, performático e portável, abaixo demonstraremos algumas imagens do sistema funcionando. [ajusta isso ai, num sei se ta bom a escrita].
+
+Na imagem~\ref{fig:raspberryDistroRaspbian} pode-se observar a aplicação executando de um Raspberry Pi 3 Model B (referenciar imagem imagem do dispositivo utilizado raspberry pi 3 model b) e escutando na porta 3000 para web e 1885 para MQTT.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/raspberryDistroRaspbian}
+		\caption{Representação execução aplicação.}
+		\label{fig:raspberryDistroRaspbian}
+	\end{center}
+\end{figure}
+
+Na imagem~\ref{fig:dadosBasicos} temos a tela inicial da aplicação, que permite um cadastro de dados básicos para funcionamento da aplicação.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/dadosBasicos}
+		\caption{Representação visual da tela dos dados básicos.}
+		\label{fig:dadosBasicos}
+	\end{center}
+\end{figure}
+
+Na imagem~\ref{fig:triggerCadastrada} vemos o cadastro de uma trigger com operação lógica de intervalo, onde o evento será executado apenas caso o valor enviado pelo dispositivo esteja entre 1 e 10. Um cenário claro de uso desta funcionalidade seria o uso do gateway para enviar notificações caso um sensor leia informações de um cenário crítico.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/triggerCadastrada}
+		\caption{Representação visual da tela de cadastro de trigger.}
+		\label{fig:triggerCadastrada}
+	\end{center}
+\end{figure}
+
+Na imagem~\ref{fig:dispositivoCadastrado} temos a listagem de dispositivos cadastrados, onde o dispositivo de nome “Celular com MyMqtt” está cadastrado, mas sua identificar é “*” que permite que qualquer dispositivo seja identificado por este cadastrado.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/dispositivoCadastrado}
+		\caption{Representação visual da tela de cadastro de dispositivos.}
+		\label{fig:dispositivoCadastrado}
+	\end{center}
+\end{figure}
+
+Na imagem~\ref{fig:aplicativoAndroidMQTT} temos um dispositivo android conectado ao gateway utilizando MQTT e enviando eventos para análise.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/aplicativoAndroidMQTT}
+		\caption{Representação visual do dispositivo android utilizando protocolo MQTT.}
+		\label{fig:aplicativoAndroidMQTT}
+	\end{center}
+\end{figure}
+
+Na imagem~\ref{fig:eventoConsole} visualizamos o log da aplicação de 2 eventos, um em que o cenário não foi atendido, e outro em seguida onde o mesmo foi atendido e enviou o SMS.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/eventoAtendidoNaoAtendidoConsole}
+		\caption{Representação visual do console ao receber eventos.}
+		\label{fig:eventoConsole}
+	\end{center}
+\end{figure}
+
+Na imagem~\ref{fig:smsRecebido2} o SMS recebido pelo celular após o evento atendido.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/smsRecebido2}
+		\caption{Representação visual do SMS recebido.}
+		\label{fig:smsRecebido2}
+	\end{center}
+\end{figure}
+
+Todos os eventos atendidos e dados recebidos são armazenados no banco de dados da aplicação para consulta posterior.
 
 \subsection{Trabalhos futuros}
 \label{trabalhosFuturos}
+
+Como trabalhos futuros, destacamos um suporte a mais protocolos de comunicação com dispositivos e outras funções existentes em outros gateways, como a transmissão posterior das informações armazenadas para a cloud e suporte a novos eventos como, envio de email, ligações e até envio de informações para outros dispositivos, assim tornando o gateway como um dispositivo não só passivo, mas como atuante na rede em que eles está inserido.
 
 
 
