@@ -1,37 +1,38 @@
 \section{Solução desenvolvida}
 \label{sec:iotGateway}
 
-Esta seção propõe-se a detalhar os objetivos e decisões arquiteturais. Foi desenvolvida uma solução de software de \textit{Smart Gateway IoT} que está disponibilizada no Github, capaz de receber dados através de uma rede utilizando o protocolo MQTT de um dispositivo previamente cadastro e armazenar essas informações. Os dados recebidos são analisados para um embasamento onde irá definir a execução ou não de um fluxo de notificação através de SMS para um número definido.
+Esta seção detalha os objetivos e decisões arquiteturais. Foi desenvolvida uma solução de software de \textit{Smart Gateway IoT} que está disponibilizada no Github, capaz de receber dados através de uma rede utilizando o protocolo MQTT	(\ref{mqtt}) de um dispositivo previamente cadastro e armazenar essas informações. Os dados recebidos são analisados para um embasamento onde irá definir a execução ou não de um fluxo de notificação através de SMS (\ref{sms}) para um número definido.
 
 \subsection{Tecnologias Utilizadas} 
 \begin{itemize}
-	\item Node.js v6.x \cite{NodeJS};
-	\item TypeScript 2.3 com transpile para ES6 \cite{Typescript};
-	\item TSLint 4.x com recomendações gerais padrão \cite{TSLint};
-	\item Jest para teste unitário e cobertura \cite{Jest};
-	\item Angular 1.6 para o front end da aplicação \cite{AngularJS};
-	\item MongoDB \cite{MongoDB}.
-	\item MQTT \cite{Mqtt}
-	\item Express como framework web Node.js \cite{ExpressJS}
+	\item Node.js \footnote{NodeJS - \url{https://nodejs.org/en/}} v6.x;
+	\item TypeScript \footnote{Typescript - \url{http://www.typescriptlang.org/}} v2.3 com transpile para ES6;
+	\item TSLint \footnote{TSLint - \url{https://palantir.github.io/tslint/}} v4.x com recomendações gerais padrão;
+	\item Jest \footnote{Jest - \url{https://facebook.github.io/jest/}}para teste unitário e cobertura;
+	\item AngularJS \footnote{AngularJS - \url{https://angularjs.org/}} v1.6 para o front end da aplicação ;
+	\item MongoDB \footnote{MongoDB - \url{https://www.mongodb.com/}} para persistência.
+	\item MQTT (\ref{mqtt}) como protocolo de comunição
+	\item SMS (\ref{sms}) 
+	\item ExpressJS \footnote{ExpressJS - \url{http://expressjs.com/}} como framework web Node.js 
 \end{itemize}
 
-O Node.js \cite{NodeJS} foi escolhido por conta de seu baixo consumo de memória e processamento, além da sua característica de Non-Blocking IO \cite{NodeJSNonBlockingIO}, garantindo que possamos servir mais clientes com menos recursos, objetivo essencial para aplicações que podem ser executadas em um Raspberry Pi por exemplo.
+O Node.js foi escolhido por conta de seu baixo consumo de memória e processamento, além da sua característica de Non-Blocking IO \cite{NodeJSNonBlockingIO}, garantindo que possamos servir mais clientes com menos recursos, objetivo essencial para aplicações que podem ser executadas em um Raspberry Pi por exemplo.
 
-A escolha pelo TypeScript \cite{Typescript}, linguagem que é um superset do Javascript padrão foi motivada por garantir uma estrutura tipada, de forma que a manutenção do código fosse facilitada e as regras de negócio pudessem estar ligadas a um contrato de objeto.
+A escolha pelo TypeScript \footnote{Typescript - \url{http://www.typescriptlang.org/}}, linguagem que é um superset do Javascript padrão foi motivada por garantir uma estrutura tipada, de forma que a manutenção do código fosse facilitada e as regras de negócio pudessem estar ligadas a um contrato de objeto.
 
-Já o AngularJS \cite{AngularJS} foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação aos clientes, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com esta tecnologia.
+Já o AngularJS \footnote{AngularJS - \url{https://angularjs.org/}} foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação aos clientes, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com esta tecnologia.
 
-\subsubsection{Protocolos}
+\subsubsection{Protocolos de comunicação}
 \label{protocolos}
 
-O SMS \cite{SMS}, abreviação de Short Message Service, é um serviço de troca de mensagens curtas de textos entre aparelhos celulares.
+\phantomsection{SMS}\label{sms}, abreviação de \textit{Short Message Service}, é um serviço de troca de mensagens curtas de textos que permite o envio de mensagens para aparelhos celulares, conforme os padrões definidos no GSM (\textit{Global System for Mobile Communications}). Seu uso é bastante popular (cerca de 3,6 bilhões de usuários) \cite{SMS} e ubíquo (presente em praticamente qualquer país) \cite{SMSItu}. Além do que seu uso é fácil e barato, uma vez que o usuário receptor não requer conexão com a Internet para receber a mensagem, bastando possuir sinal com a rede de telefonia.
 
-O MQTT \cite{Mqtt}, abreviação de Message Queue Telemetry Transport, é um protocolo de comunicação altamente voltado para IoT. Ele foi arquitetado para ser um sistema de mensageria leve do tipo publisher/subscriber, para rodar em dispositivos limitados, tanto do ponto de vista da quantidade de memória para execução do programa, quanto do ponto de vista da conectividade. Redes lentas ou com alta latência não são problemas para esse protocolo. Geralmente, sensores IoT podem residir em locais extremamente hostis do ponto de vista de infra-estrutura de conexão de dados.
+O \phantomsection{MQTT}\label{mqtt}, abreviação de \textit{Message Queue Telemetry Transport}, é um protocolo de comunicação altamente voltado para IoT. Ele foi arquitetado para ser um sistema de mensageria leve do tipo publisher/subscriber, para rodar em dispositivos limitados, tanto do ponto de vista da quantidade de memória para execução do programa, quanto do ponto de vista da conectividade. Redes lentas ou com alta latência não são problemas para esse protocolo. Geralmente, sensores IoT podem residir em locais extremamente hostis do ponto de vista de infra-estrutura de conexão de dados.
 
 
 
 \subsection{Modelo de Dados}
-O modelo de dados foi concebido com a intenção de tornar as etapas do processo altamente plugáveis e customizáveis no curto e longo prazo, garantindo as funcionalidades básicas do MVP executado e a possibilidade de extensibilidade no futuro com retrocompatibilidade, ver Figura~\ref{fig:modeloDeDados}.
+O modelo de dados foi concebido com a intenção de tornar as etapas do processo altamente plugáveis e customizáveis no curto e longo prazo, garantindo as funcionalidades básicas do MVP \cite{MVP} executado e a possibilidade de extensibilidade no futuro com retrocompatibilidade, ver Figura~\ref{fig:modeloDeDados}.
 
 \begin{figure}[h!]
 	\begin{center}
