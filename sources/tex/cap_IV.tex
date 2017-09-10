@@ -21,7 +21,14 @@ A escolha pelo TypeScript \cite{Typescript}, linguagem que é um superset do Jav
 
 Já o AngularJS \cite{AngularJS} foi escolhido, por ser uma tecnologia que funciona com javascript nativo, sem necessidade de nenhum pós-processador para servir a aplicação aos clientes, permitindo o seu uso diretamente entre os arquivos estáticos do mesmo servidor Node.js que expõe a aplicação. Além disso, contou como um ponto para a escolha, a experiência prévia da equipe no desenvolvimento com esta tecnologia.
 
-O MQTT \cite{Mqtt}, abreviação de MQ Telemetry Transport, é um protocolo de comunicação altamente voltado para IoT. Ele foi arquitetado para ser um sistema de mensageria leve do tipo publisher/subscriber, para rodar em dispositivos limitados, tanto do ponto de vista da quantidade de memória para execução do programa, quanto do ponto de vista da conectividade. Redes lentas ou com alta latência não são problemas para esse protocolo. Geralmente, sensores IoT podem residir em locais extremamente hostis do ponto de vista de infra-estrutura de conexão de dados.
+\subsubsection{Protocolos}
+\label{protocolos}
+
+O SMS \cite{SMS}, abreviação de Short Message Service, é um serviço de troca de mensagens curtas de textos entre aparelhos celulares.
+
+O MQTT \cite{Mqtt}, abreviação de Message Queue Telemetry Transport, é um protocolo de comunicação altamente voltado para IoT. Ele foi arquitetado para ser um sistema de mensageria leve do tipo publisher/subscriber, para rodar em dispositivos limitados, tanto do ponto de vista da quantidade de memória para execução do programa, quanto do ponto de vista da conectividade. Redes lentas ou com alta latência não são problemas para esse protocolo. Geralmente, sensores IoT podem residir em locais extremamente hostis do ponto de vista de infra-estrutura de conexão de dados.
+
+
 
 \subsection{Modelo de Dados}
 O modelo de dados foi concebido com a intenção de tornar as etapas do processo altamente plugáveis e customizáveis no curto e longo prazo, garantindo as funcionalidades básicas do MVP executado e a possibilidade de extensibilidade no futuro com retrocompatibilidade, ver Figura~\ref{fig:modeloDeDados}.
@@ -43,3 +50,19 @@ O modelo de dados foi concebido com a intenção de tornar as etapas do processo
 \end{figure}
 
 A modelagem desenvolve uma estrutura sequencial que parte da identificação do dispositivo, análise dos gatilhos ligados a este dispositivo, avaliação da operação lógica e liberação para execução do evento, ver Figura~\ref{fig:fluxograma}. Outras entidades não ligadas aos processo principal, visam dar suporte estas operações entregando configurações do sistema e registro de históricos para análise futura. 
+
+\subsection{Requisitos funcionais}
+\label{reqFuncionais}
+
+Os requisitos funcionais levados em consideração nesse trabalho foram:
+
+\begin{itemize}
+	\item Requisito 1: Envio de mensagens via SMS \cite{SMS}
+	
+	\item Requisito 2: Cadastro de número de celular.
+\end{itemize}
+
+\subsection{Requisitos não funcionais}
+\label{reqNaoFuncionais}
+
+Requisitos não funcionais, como os de extensibilidade e de retrocompatibilidade, agregam muito esforço no desenho de um MVP \footnote{\textit{Minimum Viable Product}, ou Produto Mínimo Viável, é um termo utilizado para caracterizar um produto com as features necessárias para os primeiros clientes \cite{MVP}}, mas são aspectos que em hipótese alguma podem ser desconsiderados.
