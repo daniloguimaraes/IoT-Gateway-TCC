@@ -29,10 +29,10 @@ Já o AngularJS \footnote{AngularJS - \url{https://angularjs.org/}} foi escolhid
 
 O \phantomsection{MQTT}\label{mqtt}, abreviação de \textit{Message Queue Telemetry Transport}, é um protocolo de comunicação altamente voltado para IoT. Ele foi arquitetado para ser um sistema de mensageria leve do tipo publisher/subscriber, para rodar em dispositivos limitados, tanto do ponto de vista da quantidade de memória para execução do programa, quanto do ponto de vista da conectividade. Redes lentas ou com alta latência não são problemas para esse protocolo. Geralmente, sensores IoT podem residir em locais extremamente hostis do ponto de vista de infra-estrutura de conexão de dados.
 
-
-
 \subsection{Modelo de Dados}
-O modelo de dados foi concebido com a intenção de tornar as etapas do processo altamente plugáveis e customizáveis no curto e longo prazo, garantindo as funcionalidades básicas do MVP \cite{MVP} executado e a possibilidade de extensibilidade no futuro com retrocompatibilidade, ver Figura~\ref{fig:modeloDeDados}.
+O modelo de dados foi concebido com a intenção de tornar as etapas do processo altamente plugáveis e customizáveis no curto e longo prazo, garantindo as funcionalidades básicas do MVP \cite{MVP} executado e a possibilidade de extensibilidade no futuro com retrocompatibilidade. 
+
+Nesta modelagem, a entidade Dispositivo identifica um aparelho qualquer que se conecte ao gateway para transmitir informações, o aparelho deve definir um ID de conexão que é cadastrado nesta entidade. Com relação direta a entidade Dispositivo, e a entidade Trigger modela um gatilho clássico, composto de condição e ação. Nesta perspectiva, a condição é a entidade Operação que permite avaliar os valores recebidos e identificar se eles são iguais ou estão no intervalo de valor definidos por esta entidade. A entidade Evento por sua vez é a ação, onde é definido o que acontecerá caso a condição seja atendida, por exemplo, o envio de SMS para um destinatário com o determinado texto, ver Figura~\ref{fig:modeloDeDados}.
 
 \begin{figure}[h!]
 	\begin{center}
