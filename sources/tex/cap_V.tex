@@ -1,0 +1,77 @@
+\section{Resultados}
+\label{sec:resultados}
+
+Como resultados deste trabalho, podemos destacar o fomento à discussão de soluções que tornem o desenvolvimento para IoT mais simples, removendo a necessidade de codificação de softwares para receber os eventos para cada projeto, conseguindo resultados em um menor tempo. E como principal ponto o desenvolvimento do software que atenda requisitos de um gateway, performático e portável, abaixo demonstraremos algumas imagens do sistema funcionando.
+
+Na Figura~\ref{fig:raspberryDistroRaspbian} pode-se observar a aplicação sendo inicializada em um Raspberry Pi 3 Model B v1.2 (ver Figura~\ref{fig:raspberryPi3ModelB}), onde a porta TCP 3000 escutará as requisições Web e a porta TCP 1885 onde os dispositivos se conectarão pelo protocolo MQTT.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/raspberryDistroRaspbian}
+		\caption{Representação execução aplicação.}
+		\label{fig:raspberryDistroRaspbian}
+	\end{center}
+\end{figure}
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/raspberry-pi-3}
+		\caption{Exemplar do \textit{Raspberry Pi 3 Model B v1.2}, o SoC utilizado nesse trabalho}
+		\label{fig:raspberryPi3ModelB}
+	\end{center}
+\end{figure}
+
+Na Figura~\ref{fig:dadosBasicos} temos a tela inicial da aplicação com algumas informações a respeito da aplicação.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/dadosBasicos}
+		\caption{Representação visual da tela dos dados básicos.}
+		\label{fig:dadosBasicos}
+	\end{center}
+\end{figure}
+
+Na Figura~\ref{fig:triggerCadastrada} vemos o cadastro de uma \textit{trigger} com operação lógica de intervalo, onde o evento será executado apenas caso o valor enviado pelo dispositivo esteja entre 1 e 10. Um cenário claro de uso desta funcionalidade seria o uso do gateway para enviar notificações caso um sensor leia informações de um cenário crítico.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/triggerCadastrada}
+		\caption{Representação visual da tela de cadastro de trigger.}
+		\label{fig:triggerCadastrada}
+	\end{center}
+\end{figure}
+
+Na Figura~\ref{fig:dispositivoCadastrado} temos a listagem de dispositivos cadastrados, onde o dispositivo de nome \verb|"Celular com MyMqtt"| está cadastrado, mas sua identificar é \verb|"*"| que permite que qualquer dispositivo seja identificado por este cadastrado.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/dispositivoCadastrado}
+		\caption{Representação visual da tela de cadastro de dispositivos.}
+		\label{fig:dispositivoCadastrado}
+	\end{center}
+\end{figure}
+
+Na Figura~\ref{fig:aplicativoAndroidMQTT} temos um dispositivo android conectado ao gateway utilizando MQTT e enviando eventos para análise.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{./img/aplicativoAndroidMQTT}
+		\caption{Representação visual do dispositivo Android utilizando protocolo MQTT.}
+		\label{fig:aplicativoAndroidMQTT}
+	\end{center}
+\end{figure}
+
+Na Figura~\ref{fig:eventoConsole} visualizamos o log da aplicação de 2 eventos, um em que o cenário não foi atendido, e outro em seguida onde o mesmo foi atendido e enviou o SMS.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.085\textwidth]{./img/eventoAtendidoNaoAtendidoConsole}
+		\caption{Representação visual do console ao receber eventos.}
+		\label{fig:eventoConsole}
+	\end{center}
+\end{figure}
+
+Na Figura~\ref{fig:smsRecebido2} o SMS recebido pelo celular após o evento atendido.
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{./img/smsRecebido2}
+		\caption{Representação visual do SMS recebido.}
+		\label{fig:smsRecebido2}
+	\end{center}
+\end{figure}
+
+Todos os eventos atendidos e dados recebidos são armazenados no banco de dados da aplicação para consulta posterior.
