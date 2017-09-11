@@ -14,16 +14,16 @@ Com a evolução dos gateways são utilizados basicamente dois tipos de Gateways
 	\item Executar ações com base nos dados recebidos e regras configuradas.
 \end{itemize}
 
-A Figura \ref{fig:arquiteturaIotGateway} ilustra uma arquitetura convencional de um Gateway IoT e suas relações com os sensores e com a Cloud.
+A Figura \ref{fig:arquiteturaIotGateway} ilustra uma arquitetura convencional de um Gateway IoT e suas relações com os sensores e com o Data Center.
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{./img/rumFxS7.png}
-		\caption{Descrição esquemática da arquitetura de um Gateway IoT. \cite{DZone}}
+		\caption{Descrição esquemática da arquitetura básica de um Gateway IoT \cite{DZone}. Os \textit{Sensors} representam os sensores (dispositivos que reagem a um determinado estímulo do ambiente, como por exemplo, um termômetro) e \textit{Sensors Payloads} são as informações que cada um deles envia ao Gateway. O \textit{Gateway Software} é responsável por controlar o Gateway e o \textit{Collected Data} é o conjunto de  informações que o Gateway julgou oportuno enviar ao \textit{Data Center}, que é o local onde os dados são armazenados e processados. }
 		\label{fig:arquiteturaIotGateway}
 	\end{center}
 \end{figure}
 
-Sensores residem no que a indústria nomeia como sendo campo, ou seja, onde os sensores realmente devem atuar. São exemplos de campos: galpões, silos, plantas industriais, florestas, plantações etc. Já a Cloud tem o mesmo significado que estamos habituados: um servidor na nuvem onde dados são mantidos e processamentos são realizados. O Gateway IoT faz exatamente essa ligação entre os sensores e a Internet, uma vez que sensores não costumam ter boas condições de acesso à Internet, tanto do ponto de vista da disponibilidade quanto da largura de banda.
+Sensores residem no que a indústria nomeia como sendo campo, ou seja, onde os sensores realmente devem atuar. São exemplos de campos: galpões, silos, plantas industriais, florestas, plantações etc. Já o Data Center tem o mesmo significado que estamos habituados: um servidor onde dados são mantidos e processamentos são realizados. O Gateway IoT faz exatamente essa ligação entre os sensores e a Internet, uma vez que sensores não costumam ter boas condições de acesso à Internet, tanto do ponto de vista da disponibilidade quanto da largura de banda.
 
 A grande vantagem em construir um Gateway open-source é o alto nível de customização que ele pode oferecer, já que temos total acesso ao sistema operacional, sem restrições impostas pelo fabricante – o que ocorre na maioria dos casos. Essa customização vai permitir usar o gateway em modo \textit{fog computing} \footnote{\textit{Fog Computing}, ou Computação em Névoa, define a arquitetura que estende a capacidade computacional e o armazenamento da nuvem para as camadas de acesso da rede, permitindo que os dados sejam analisados e transformados em informações ou em ações antes de serem simplesmente transmitidos. \cite{CIOIDG}} para o processamento de informações o mais perto do dispositivo da borda, ou \textit{edge device}, fazendo com que, mesmo na falta de Internet, o dispositivo consiga se manter operacional, ainda que com algumas restrições.
 
