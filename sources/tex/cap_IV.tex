@@ -60,12 +60,17 @@ A modelagem desenvolve uma estrutura sequencial que parte da identificação do 
 Os requisitos funcionais levados em consideração nesse trabalho foram:
 
 \begin{itemize}
-	\item Requisito 1: Envio de mensagens via SMS \cite{SMS}
-	
-	\item Requisito 2: Cadastro de número de celular.
+	\item Cadastro de dispositivos
+	\item Conexão de dispositivos via protocolo MQTT
+	\item Visualização e persistência de eventos enviados pelos dispositivos
+	\item Envio de mensagens via SMS
+	\item Configuração de número(s) de celular como destinatário(s) de SMS enviada
+	\item Cadastro de triggers
 \end{itemize}
 
 \subsection{Requisitos não funcionais}
 \label{reqNaoFuncionais}
 
 Requisitos não funcionais, como os de extensibilidade e de retrocompatibilidade, agregam muito esforço no desenho de um MVP, mas são aspectos que em hipótese alguma podem ser desconsiderados.
+
+A compatibilidade com dispositivos cujo hardware possui poucos recursos computacionais, tais como o Raspberry Pi, é o principal requisito não funcional.
