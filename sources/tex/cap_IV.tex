@@ -10,9 +10,9 @@ Esta seção detalha os objetivos e decisões arquiteturais. Foi desenvolvida um
 	\item TSLint \footnote{TSLint - \url{https://palantir.github.io/tslint/}} v4.x com recomendações gerais padrão;
 	\item Jest \footnote{Jest - \url{https://facebook.github.io/jest/}}para teste unitário e cobertura;
 	\item AngularJS \footnote{AngularJS - \url{https://angularjs.org/}} v1.6 para o front end da aplicação ;
-	\item MongoDB \footnote{MongoDB - \url{https://www.mongodb.com/}} para persistência.
-	\item MQTT (\ref{mqtt}) como protocolo de comunição
-	\item SMS (\ref{sms}) 
+	\item MongoDB \footnote{MongoDB - \url{https://www.mongodb.com/}} para persistência;
+	\item MQTT (\ref{mqtt}) como protocolo de comunicação entre os sensores e o Gateway;
+	\item SMS (\ref{sms}) como serviço de mensageria;
 	\item ExpressJS \footnote{ExpressJS - \url{http://expressjs.com/}} como framework web Node.js 
 \end{itemize}
 
@@ -30,11 +30,11 @@ Já o AngularJS \footnote{AngularJS - \url{https://angularjs.org/}} foi escolhid
 O \phantomsection{MQTT}\label{mqtt}, abreviação de \textit{Message Queue Telemetry Transport}, é um protocolo de comunicação altamente voltado para IoT. Ele foi arquitetado para ser um sistema de mensageria leve do tipo publisher/subscriber, para rodar em dispositivos limitados, tanto do ponto de vista da quantidade de memória para execução do programa, quanto do ponto de vista da conectividade. Redes lentas ou com alta latência não são problemas para esse protocolo. Geralmente, sensores IoT podem residir em locais extremamente hostis do ponto de vista de infra-estrutura de conexão de dados.
 
 \subsection{Modelo de Dados}
-O modelo de dados foi concebido com a intenção de tornar as etapas do processo altamente plugáveis e customizáveis no curto e longo prazo, garantindo as funcionalidades básicas do MVP \cite{MVP} executado e a possibilidade de extensibilidade no futuro com retrocompatibilidade. 
+O modelo de dados foi concebido com a intenção de tornar as etapas do processo altamente plugáveis e customizáveis no curto e longo prazo, garantindo as funcionalidades básicas do MVP \footnote{\textit{Minimum Viable Product}, ou Produto Mínimo Viável, é um termo utilizado para caracterizar um produto com as features necessárias para os primeiros clientes \cite{MVP}} executado e a possibilidade de extensibilidade no futuro com retrocompatibilidade. 
 
-Nesta modelagem, a entidade Dispositivo identifica um aparelho qualquer que se conecte ao gateway para transmitir informações, o aparelho deve definir um ID de conexão que é cadastrado nesta entidade. Com relação direta a entidade Dispositivo, e a entidade Trigger modela um gatilho clássico, composto de condição e ação. Nesta perspectiva, a condição é a entidade Operação que permite avaliar os valores recebidos e identificar se eles são iguais ou estão no intervalo de valor definidos por esta entidade. A entidade Evento por sua vez é a ação, onde é definido o que acontecerá caso a condição seja atendida, por exemplo, o envio de SMS para um destinatário com o determinado texto, ver Figura~\ref{fig:modeloDeDados}.
+Nesta modelagem, a entidade \verb|Dispositivo| identifica um aparelho qualquer que se conecte ao gateway para transmitir informações, o aparelho deve definir um ID de conexão que é cadastrado nesta entidade. Com relação direta a entidade \verb|Dispositivo|, e a entidade \verb|Trigger| modela um gatilho clássico, composto de condição e ação. Nesta perspectiva, a condição é a entidade \verb|Operação| que permite avaliar os valores recebidos e identificar se eles são iguais ou estão no intervalo de valor definidos por esta entidade. A entidade \verb|Evento| por sua vez é a ação, onde é definido o que acontecerá caso a condição seja atendida, por exemplo, o envio de SMS para um destinatário com o determinado texto, ver Figura~\ref{fig:modeloDeDados}.
 
-Além das entidades que servem diretamente a execução do fluxo principal da aplicação, temos 3 entidades de funções secundárias. Configuracao é responsável por armazenar os dados utilizados para configurar a aplicação, como a configuração das credênciais para uso do serviço de SMS. As entidades HistoricoEvento e HistoricoMensagem são reponsáveis por armazenar os dados recebidos e os eventos executados.
+Além das entidades que servem diretamente a execução do fluxo principal da aplicação, temos 3 entidades de funções secundárias. \verb|Configuracao| é responsável por armazenar os dados utilizados para configurar a aplicação, como a configuração das credenciais para uso do serviço de SMS. As entidades \verb|HistoricoEvento| e \verb|HistoricoMensagem| são responsáveis por armazenar os dados recebidos e os eventos executados.
 
 \begin{figure}[h!]
 	\begin{center}
@@ -68,4 +68,4 @@ Os requisitos funcionais levados em consideração nesse trabalho foram:
 \subsection{Requisitos não funcionais}
 \label{reqNaoFuncionais}
 
-Requisitos não funcionais, como os de extensibilidade e de retrocompatibilidade, agregam muito esforço no desenho de um MVP \footnote{\textit{Minimum Viable Product}, ou Produto Mínimo Viável, é um termo utilizado para caracterizar um produto com as features necessárias para os primeiros clientes \cite{MVP}}, mas são aspectos que em hipótese alguma podem ser desconsiderados.
+Requisitos não funcionais, como os de extensibilidade e de retrocompatibilidade, agregam muito esforço no desenho de um MVP, mas são aspectos que em hipótese alguma podem ser desconsiderados.
