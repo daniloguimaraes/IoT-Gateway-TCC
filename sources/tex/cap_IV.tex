@@ -73,4 +73,22 @@ Os requisitos funcionais levados em consideração nesse trabalho foram:
 
 Requisitos não funcionais, como os de extensibilidade e de retrocompatibilidade, agregam muito esforço no desenho de um MVP, mas são aspectos que em hipótese alguma podem ser desconsiderados.
 
+Uma vez que a linguagem escolhida (o Typescript) permite o uso conceitos de Orientação à Objetos (tais como abstrações, tipagens, interfaces e herança), a extensibilidade pode ser garantida por meio da inclusão de novos módulos Typescript e pela extensão do modelo de entidades. Ambos os módulos já existentes e os novos coexistiriam sem muitas dificuldades, garantindo assim a retrocompatibilidade.
+
+O componente \verb|EventoApi.ts|~\footnote{https://github.com/RicardoRFaria/IoT-Gateway/blob/master/src/api/EventoApi.ts} é responsável pelo chaveamento entre as implementações de envio de evento. Vejamos abaixo um trecho de código desse componente:
+
+\lstinputlisting[language=JavaScript, caption=EventoApi.ts]{code/EventoApi.ts}
+
+Em relação ao componente acima, caso seja necessário adicionar uma nova forma de envio de evento, basta:
+
+\begin{itemize}
+	 \item injetar a dependência (\verb|import|) (linhas 1 a 4),
+	 \item incluir um novo atributo (linha 11), 
+	 \item instanciar o objeto no construtor (linha 14),
+	 \item alterar o método \verb|executarEvento|, fazendo o devido chaveamento conforme o tipo da implementação (linha 22)
+	 \item criar uma \verb|function| específica para tratar o novo tipo de envio.
+\end{itemize}
+
+As configurações específicas da nova forma de envio de eventos poderiam facilmente ser acomodadas na entidade existente de configuração, \verb|Configuracao|, uma vez que a natureza \textit{schemaless} do MongoDB permite esse tipo de cenário.
+
 A compatibilidade com dispositivos cujo hardware possui poucos recursos computacionais, tais como o Raspberry Pi, é o principal requisito não funcional.
