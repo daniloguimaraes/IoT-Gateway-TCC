@@ -82,11 +82,11 @@ O componente \verb|EventoApi.ts|~\footnote{https://github.com/RicardoRFaria/IoT-
 Em relação ao componente acima, caso seja necessário adicionar uma nova forma de envio de evento, basta:
 
 \begin{itemize}
-	 \item injetar a dependência (\verb|import|) (linhas 1 a 4),
-	 \item incluir um novo atributo (linha 11), 
-	 \item instanciar o objeto no construtor (linha 14),
-	 \item alterar o método \verb|executarEvento|, fazendo o devido chaveamento conforme o tipo da implementação (linha 22)
-	 \item criar uma \verb|function| específica para tratar o novo tipo de envio.
+	 \item Injetar a dependência (\verb|import|) (linhas 1 a 4);
+	 \item Incluir um novo atributo (linha 11); 
+	 \item Instanciar o objeto no construtor (linha 14);
+	 \item Alterar o método \verb|executarEvento|, fazendo o devido chaveamento conforme o tipo da implementação (linha 22);
+	 \item Criar uma \verb|function| específica para tratar o novo tipo de envio.
 \end{itemize}
 
 As configurações específicas da nova forma de envio de eventos poderiam facilmente ser acomodadas na entidade existente de configuração, \verb|Configuracao|, uma vez que a natureza \textit{schemaless} do MongoDB permite esse tipo de cenário.
